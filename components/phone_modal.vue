@@ -43,13 +43,13 @@ const handleSubmit = async () => {
     <form class="flex flex-col" @submit.prevent="handleSubmit">
       <input
         v-model="fullName"
-        class="border py-4 px-5 mb-3 rounded-full border-primary text-primary/50 outline-none"
-        type="text"
+        class="border py-4 px-5 mb-3 text-[#000] rounded-full border-primary outline-none"
+        type="text"  
         placeholder="ФИО"
       />
       <input
         v-model="phone"
-        class="border py-4 px-5 rounded-full border-primary text-primary/50 outline-none"
+        class="border py-4 px-5 text-[#000] rounded-full border-primary outline-none"
         type="tel"
         placeholder="Tелефон"
       />

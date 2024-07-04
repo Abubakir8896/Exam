@@ -19,7 +19,7 @@ export default {
 </script>
 <template>
   <div class="slide flex justify-between items-center mt-5 mb-20">
-    <div class="md:w-[1450px] lg:h-[550px] h-[450px]">
+    <div class="w-[1450px] mx-auto lg:h-[550px] h-[450px]">
       <swiper
         :spaceBetween="30"
         :loop="true"
@@ -67,7 +67,6 @@ h1.title {
 }
 
 .slide {
-  width: 1900px;
   margin-right: auto;
   margin-left: auto;
   padding-right: 20px;

@@ -7,9 +7,11 @@
                     каталог <img class="w-[14px] h-[10px] ml-[6px]" src="../public/next.webp" alt=""></button>
             </div>
             <div class="md:grid grid-cols-3 gap-5">
-                <div class="w-[420px] h-[250px] bg-[#F2F2F2] relative py-6 pl-10 rounded-[20px] hover:shadow-lg transition-shadow duration-800"
+                <div class="w-[420px] h-[250px] bg-[#F2F2F2] relative py-6 pl-10 rounded-[20px] hover:bg-[#454545] hover:text-[#fff] transition-shadow duration-800"
                     v-for="item in catalogs">
-                    <p class="text-[Monrope] text-[20px] text-[#454545]">{{ item.title }}</p>
+                    <div>
+                        <p class="text-[Monrope] text-[20px]">{{ item.title }}</p>
+                    </div>
                     <img class="w-[180px] h-[206px] absolute right-4 top-11" :src="item.image" alt="">
                     <div class="flex absolute bottom-6 justify-around items-center gap-4">
                         <p>{{ item.price }}</p>

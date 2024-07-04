@@ -1,5 +1,4 @@
 <template>
-    <Navbar />
     <div class="container flex justify-between mb-[70px]">
         <h1 class="text-[64px] primery text-[Monrope]">Гарантии</h1>
         <div class="w-[620px]">
@@ -26,4 +25,4 @@
             </div>
         </div>
     </div>
-<Footer /></template>
+</template>

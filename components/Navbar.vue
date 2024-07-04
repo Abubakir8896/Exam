@@ -12,6 +12,9 @@ const toggleSidebar = () => {
   showSidebar.value = !showSidebar.value;
   showInput.value = !showInput.value;
 };
+import {usePiniaStore} from '../store'
+
+const store = usePiniaStore()
 </script>
 
 <template>
@@ -19,12 +22,12 @@ const toggleSidebar = () => {
     <div class="md:flex hidden items-center justify-between py-3 text-sm">
       <nav>
         <ul class="flex gap-7 text-primary/50 font-semibold">
-          <li><nuxt-link to="">О компании</nuxt-link></li>
-          <li><nuxt-link to="/shipping">Доставка и оплата</nuxt-link></li>
-          <li><nuxt-link to="">Возврат</nuxt-link></li>
-          <li><nuxt-link to="/garant">Гарантии</nuxt-link></li>
-          <li><nuxt-link to="/contact">Контакты</nuxt-link></li>
-          <li><nuxt-link to="">Блог</nuxt-link></li>
+          <li><nuxt-link class="hover:text-[#000]" to="/about">О компании</nuxt-link></li>
+          <li><nuxt-link class="hover:text-[#000]" to="/shipping">Доставка и оплата</nuxt-link></li>
+          <li><nuxt-link class="hover:text-[#000]" to="/return">Возврат</nuxt-link></li>
+          <li><nuxt-link class="hover:text-[#000]" to="/garant">Гарантии</nuxt-link></li>
+          <li><nuxt-link class="hover:text-[#000]" to="/contact">Контакты</nuxt-link></li>
+          <li><nuxt-link class="hover:text-[#000]" to="">Блог</nuxt-link></li>
         </ul>
       </nav>
       <div class="flex gap-6">
@@ -47,7 +50,7 @@ const toggleSidebar = () => {
         <nuxt-link to="/"><img v-if="showInput" class="max-md:w-40" src="/logo.svg" alt="" /></nuxt-link>
       </div>
       <nuxt-link
-        to="/katalog"
+        to="/"
         class="bg-primary py-3 md:flex hidden px-7 rounded-full text-white gap-2"
         ><img src="/catalog.svg" alt="icon" />Каталог</nuxt-link
       >
@@ -62,10 +65,13 @@ const toggleSidebar = () => {
         <img class="absolute right-5 top-4" src="/search.svg" alt="" />
       </form>
       <div class="flex items-center gap-8">
-        <div class="flex flex-col items-center">
+        <nuxt-link to="/favorites" class="relative flex flex-col items-center">
           <img src="/like.svg" alt="" />
           <p class="md:block hidden">Избранное</p>
-        </div>
+          <div class="absolute top-[-15px] right-4 text-[#fff] w-[22px] h-[18px] ">
+            <h1 class="bg-[#C63C3C] text-center border rounded-full text-[14px]">{{ store.likedProducts.length }}</h1>
+          </div>
+        </nuxt-link>
         <img v-if="showModal" src="/reyting.svg" alt="" />
         <div class="md:flex hidden flex-col items-center">
           <img v-if="showInput" src="/reyting.svg" alt="" />
@@ -118,7 +124,7 @@ const toggleSidebar = () => {
           </ul>
         </nav>
         <nuxt-link
-          to="/katalog"
+          to="/"
           class="bg-primary py-3 items-center px-40 mt-7 flex rounded-full text-white gap-2"
           ><img src="/catalog.svg" alt="icon" />Каталог</nuxt-link
         >
