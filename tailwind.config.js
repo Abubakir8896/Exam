@@ -4,8 +4,7 @@ export default {
 	theme: {
 		extend: {
 			colors: {
-				primary: '#F7931E',
-				kulrang: '#EDE9E9',
+				primary: '#454545',
 			},
 			fontFamily: {
 				roboto: 'Roboto',

@@ -29,7 +29,7 @@ const handleSubmit = async () => {
 
 <template>
   <div
-    class="w-full h-full bg-primary/10 fixed top-0 z-10"
+    class="w-[800px] h-[534px] bg-primary/10 fixed top-0 z-10"
     @click="closeModal"
   ></div>
   <div class="container relative max-w-[800px] bg-white p-16 z-20 rounded-[25px]">
@@ -51,7 +51,7 @@ const handleSubmit = async () => {
         v-model="phone"
         class="border py-4 px-5 rounded-full border-primary text-primary/50 outline-none"
         type="tel"
-        placeholder="телефон"
+        placeholder="Tелефон"
       />
       <button
         type="submit"

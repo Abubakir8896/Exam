@@ -18,20 +18,20 @@ const toggleSidebar = () => {
   <div class="container mb-16">
     <div class="md:flex hidden items-center justify-between py-3 text-sm">
       <nav>
-        <ul class="flex gap-7  font-semibold text-[#454545]">
+        <ul class="flex gap-7 text-primary/50 font-semibold">
           <li><nuxt-link to="">О компании</nuxt-link></li>
-          <li><nuxt-link to="">Доставка и оплата</nuxt-link></li>
+          <li><nuxt-link to="/shipping">Доставка и оплата</nuxt-link></li>
           <li><nuxt-link to="">Возврат</nuxt-link></li>
-          <li><nuxt-link to="">Гарантии</nuxt-link></li>
-          <li><nuxt-link to="">Контакты</nuxt-link></li>
+          <li><nuxt-link to="/garant">Гарантии</nuxt-link></li>
+          <li><nuxt-link to="/contact">Контакты</nuxt-link></li>
           <li><nuxt-link to="">Блог</nuxt-link></li>
         </ul>
       </nav>
       <div class="flex gap-6">
-        <a class="text-[#454545] text-sm" href="tel:+8 (800) 890-46-56"
+        <a class="text-primary text-sm" href="tel:+8 (800) 890-46-56"
           >8 (800) 890-46-56</a
         >
-        <button class="text-[#454545] font-semibold" @click="toggleModal">
+        <button class="text-primary/50 font-semibold" @click="toggleModal">
           Заказать звонок
         </button>
       </div>
@@ -44,7 +44,7 @@ const toggleSidebar = () => {
           src="/burger.svg"
           alt=""
         />
-        <img v-if="showInput" class="max-md:w-40" src="/logo.svg" alt="" />
+        <nuxt-link to="/"><img v-if="showInput" class="max-md:w-40" src="/logo.svg" alt="" /></nuxt-link>
       </div>
       <nuxt-link
         to="/katalog"
