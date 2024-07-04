@@ -17,7 +17,7 @@ const props = defineProps({
                     <h3 class="text-[12px] text-[#9F9F9F] line-through">
                         {{ props.data?.oldPrice }}₽
                     </h3>
-                    <p class="text-[20px] primary">{{ props.data?.newPrice }}₽</p>
+                    <p class="text-[20px] primary">{{ props.data?.newPrice}}₽</p>
                 </div> 
                 <button class="bg-[#454545] p-[10px] rounded-[12px]">
                     <img class="w-[18px] h-[18px] ml-[11px] mr-[11px]" src="/bascket.png" />
