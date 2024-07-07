@@ -3,7 +3,7 @@
         <div>
             <h1 class="text-primary text-[64px]">Возврат</h1>
         </div>
-        <div class="max-w-[360px] md:w-[580px]">
+        <div class="w-[360px] md:w-[600px]">
             <div class="mt-[20px]">
                 <h2 class="text-[24px]">Обмен и возврат по желанию покупателя</h2>
                 <p class="mt-[20px]">

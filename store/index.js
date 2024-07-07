@@ -2,7 +2,8 @@ export const usePiniaStore = defineStore('pinia', {
     state(){
         return {
             likedProducts: [],
-            basket: []
+            basket: [],
+            orders: [],
         }
     },
     actions:{
@@ -27,6 +28,10 @@ export const usePiniaStore = defineStore('pinia', {
                 this.basket.splice(index,1)
             }
         },
+        addOrder(order){
+            this.orders.push(order)
+            this.basket = []
+        }
     },
     persist: true
 })

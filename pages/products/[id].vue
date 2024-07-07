@@ -1,10 +1,12 @@
 <script setup>
 import { usePiniaStore } from '../store'
+import axios from 'axios'
 
 const store = usePiniaStore()
 const route = useRoute()
 const count = ref(1)
 const loading = ref(true)
+const data = ref({})
 
 function increment() {
     count.value++
@@ -15,14 +17,26 @@ function decrement() {
     }
 }
 
-const { data } = await useFetch(
-    `https://6684d16356e7503d1ae140ec.mockapi.io/products/${route.params.id}`
-)
-loading.value = false
+const fetchProducts = () => {
+    loading.value = true
+    axios.get(`https://66861ed583c983911b00e13f.mockapi.io/product/${route.params.id}`, {
+    })
+        .then(res => {
+            data.value = res.data
+        })
+        .catch(err => {
+            console.log('err', err);
+        })
+        .finally(() => {
+            loading.value = false
+        })
+}
+
 const isLiked = computed(() => {
     const index = store.likedProducts.findIndex(p => p.id == data.value.id)
     return index == -1
 })
+
 const isBasket = computed(() => {
     const index = store.basket.findIndex(p => p.id == data.value.id)
     if (index == -1) {
@@ -31,11 +45,15 @@ const isBasket = computed(() => {
         alert("Bu mahsulot savatda mavjud!")
     }
 })
+
+fetchProducts()
 </script>
 
 <template>
+    <div v-if="loading" class="text-3xl text-gray-500 text-center py-10">
+        <Loading />
+    </div>
     <div class="container">
-        <div v-if="loading.value"> <Loading /></div>
         <div class="md:flex justify-between">
             <img class="w-[360px] h-[328px] md:w-[650px] md:h-[600px] border rounded" :src="data.image" alt="">
             <div class="w-[328px] md:w-[595px] h-[544px]">
@@ -129,21 +147,24 @@ const isBasket = computed(() => {
                 <div class="bg-[#F8F8F8]">
                     <div class="w-full flex justify-between items-center h-[210px] md:h-[70px] p-[20px]">
                         <p>Покрышки</p>
-                        <p class="text-[#4C4C4C] w-[129px] md:w-[500px]">Schwalbe Rocket Ron EVO / 2.1 127EPI Kevlar Bead Tubeless Easy /
+                        <p class="text-[#4C4C4C] w-[129px] md:w-[500px]">Schwalbe Rocket Ron EVO / 2.1 127EPI Kevlar Bead
+                            Tubeless Easy /
                             PaceStar compound</p>
                     </div>
                 </div>
                 <div>
                     <div class="w-full flex justify-between items-center h-[220px] md:h-[70px] p-[20px]">
                         <p>Рама</p>
-                        <p class="text-[#4C4C4C] w-[129px] md:w-[480px]">Scale Carbon / HMX-технология / технология IMP / Коническая
+                        <p class="text-[#4C4C4C] w-[129px] md:w-[480px]">Scale Carbon / HMX-технология / технология IMP /
+                            Коническая
                             рулевая труба / BB92 / Технология SDS / Дропауты IDS SL</p>
                     </div>
                 </div>
                 <div class="bg-[#F8F8F8]">
                     <div class="w-full flex justify-between items-center h-[220px] md:h-[70px] p-[20px]">
                         <p>Подседельный Штырь</p>
-                        <p class="text-[#4C4C4C] w-[129px] md:w-[500px]">Ritchey WCS 700 Series: Carbon Link FlexLogic / 31.6mm
+                        <p class="text-[#4C4C4C] w-[129px] md:w-[500px]">Ritchey WCS 700 Series: Carbon Link FlexLogic /
+                            31.6mm
                             900 Series: Carbon 2B SDS / 34.9mm</p>
                     </div>
                 </div>
@@ -156,10 +177,12 @@ const isBasket = computed(() => {
                 <div class="bg-[#F8F8F8]">
                     <div class="w-full md:flex justify-between items-center h-[150px] md:h-[100px] p-[20px]">
                         <p>Вилка</p>
-                        <p class="text-[#4C4C4C] w-full md:w-[500px]">Rock Shox SID RL3 Air / демпфер DNA3 3-режима / 15mm QR axle /
+                        <p class="text-[#4C4C4C] w-full md:w-[500px]">Rock Shox SID RL3 Air / демпфер DNA3 3-режима / 15mm
+                            QR axle /
                             коническая рулевая труба / Удалённая блокировка, регулировка отскока / ход 100mm</p>
                     </div>
                 </div>
             </div>
+        </div>
     </div>
-</div></template>
+</template>

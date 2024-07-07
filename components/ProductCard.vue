@@ -2,13 +2,13 @@
 const props = defineProps({
     data: Object,
 })
-import {usePiniaStore} from '../store'
+import { usePiniaStore } from '../store'
 
 const store = usePiniaStore()
 
-const isLiked  = computed(() => {
+const isLiked = computed(() => {
     const index = store.likedProducts.findIndex(p => p.id == props.data.id)
-    return index==-1
+    return index == -1
 })
 
 </script>
@@ -17,7 +17,8 @@ const isLiked  = computed(() => {
     <div class="relative w-[100%]  px-1 md:px-3 py-[30px] bg-white shadow-lg rounded-md">
         <div class="flex justify-between">
             <nuxt-link :to="`/products/${props.data.id}`">
-                <img :src="props.data?.image" alt="image" class="w-[80%] md:w-[65%]  h-[220px] object-cover mx-auto rounded mb-2" />
+                <img :src="props.data?.image" alt="image"
+                    class="w-[80%] md:w-[65%]  h-[220px] object-cover mx-auto rounded mb-2" />
             </nuxt-link>
         </div>
         <div class="w-[20px] h-[19px] absolute top-3 right-2 md:right-3 rounded-[3px]">
@@ -33,8 +34,8 @@ const isLiked  = computed(() => {
                     <h3 class="text-[12px] text-[#9F9F9F] line-through">
                         {{ props.data?.oldPrice }}₽
                     </h3>
-                    <p class="text-[20px] primary">{{ props.data?.newPrice}}₽</p>
-                </div> 
+                    <p class="text-[20px] primary">{{ props.data?.newPrice }}₽</p>
+                </div>
                 <button @click.stop="store.addProductBasket(props.data)" class="bg-[#454545] p-[10px] rounded-[100px]">
                     <img class="w-[15px] md:w-[18px] h-[16px] md:h-[18px] ml-[11px] mr-[11px]" src="/bascket.png" />
                 </button>
