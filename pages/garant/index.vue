@@ -1,14 +1,14 @@
 <template>
-    <div class="container flex justify-between mb-[70px]">
-        <h1 class="text-[64px] primery text-[Monrope]">Гарантии</h1>
-        <div class="w-[620px]">
-            <h2 class="text-[24px] text-[Monrope] text-[#000]">Обмен и возврат по желанию покупателя</h2>
+    <div class="container md:flex justify-between mb-[70px]">
+        <h1 class="text-[32px] md:text-[64px] text-primery mb-[20px] text-[Monrope]">Гарантии</h1>
+        <div class="w-[328px] md:w-[620px]">
+            <h2 class="text-[20px] md:text-[24px] text-[Monrope] text-[#000]">Обмен и возврат по желанию покупателя</h2>
             <div class="mt-[20px] text-[18px] text-[Monrope] text-[#000]">
                 <p>Все товары в магазине «NornLight» имеют гарантию. Она заявляется производителем и имеет определенный срок
                     действия на различные группы товаров.
                     Если ваше изделие вышло из строя в течение гарантийного срока вы можете обратиться к нам и получить
                     бесплатный ремонт. Для этого нужно:</p>
-                <ul class="list-disc ml-[40px]">
+                <ul class="list-disc ml-[30px] md:ml-[40px]">
                     <li class="mt-[10px]">Предоставить чек, накладную или сообщить почту или номер телефона, указанные при
                         оформлении заказа.
                     </li>

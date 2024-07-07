@@ -17,9 +17,16 @@ export const usePiniaStore = defineStore('pinia', {
                 this.likedProducts.splice(index,1)
             }
         },
-        addProductBasket(product){
-            this.basket.push(product)
-        }
+        addProductBasket(product, count){
+            const index = this.basket.findIndex(item => product.id ==item.id )
+
+            if(index == -1){
+                this.basket.push({...product, count: count || 1})
+            }
+            else{
+                this.basket.splice(index,1)
+            }
+        },
     },
     persist: true
 })

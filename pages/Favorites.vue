@@ -19,7 +19,7 @@ const products = store.likedProducts
             <div>
                 <h1 class="text-[40px] primary text-[Manrope] mb-[30px]">Избранные товары</h1>
             </div>
-            <div class="absolute top-3 right-7 text-[#fff] w-[22px] h-[18px] ">
+            <div v-if="store.likedProducts.length>0" class="absolute top-3 right-7 text-[#fff] w-[22px] h-[18px] ">
                 <h1 class="bg-[#C63C3C] text-center border rounded-full text-[12px]">{{ store.likedProducts.length }}</h1>
             </div>
         </div>

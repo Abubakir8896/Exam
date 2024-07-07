@@ -1,9 +1,11 @@
 <template>
     <Slider />
-    <Catalog class="mt-[50px]" />
-    <WhyNorlight class="mt-[30px]" />
+    <Catalog class="md:mt-[50px] md:block hidden" />
+    <MiniCatalog class="mt-[80px] block md:hidden" />
+    <WhyNorlight class="mt-[30px] md:block hidden" />
+    <MiniWhyNornlight class="block md:hidden" />
     <Products />
     <Brands />
+    <Blogs />
+    <Production />
 </template>
-<script setup>
-</script>

@@ -19,7 +19,7 @@ export default {
 </script>
 <template>
   <div class="slide flex justify-between items-center mt-5 mb-20">
-    <div class="w-[1450px] mx-auto lg:h-[550px] h-[450px]">
+    <div class="w-full md:w-[1450px] mx-auto lg:h-[550px] h-[450px]">
       <swiper
         :spaceBetween="30"
         :loop="true"
@@ -31,7 +31,7 @@ export default {
       >
         <swiper-slide v-for="item in 8" data-hash="slide1" class="">
           <div
-            class="flex max-md:flex-col-reverse items-center container justify-between md:h-[500px] h-[577px]"
+            class="flex max-md:flex-col-reverse items-center container justify-between md:h-[500px] h-[527px]"
           >
             <div class="text-left w-full mb-5">
               <h1

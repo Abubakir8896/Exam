@@ -3,7 +3,9 @@
         <div class="container">
             <div class="flex justify-between items-center">
                 <h1 class="text-[#454545] text-[40px] mb-[20px]">Почему NORNLIGHT?</h1>
-                <button class="pt-[10px] pb-[10px] pl-[35px] pr-[35px] border rounded-[100px] flex items-center justify-between">О компании <img class="ml-[5px] w-[18px] h-[15px]"  src="../public/next.webp" alt=""></button>
+                <nuxt-link to="/about">
+                    <button class="pt-[10px] pb-[10px] pl-[35px] pr-[35px] border rounded-[100px] flex items-center justify-between">О компании <img class="ml-[5px] w-[18px] h-[15px]"  src="../public/next.webp" alt=""></button>
+                </nuxt-link>
             </div>
             <div class="md:grid grid-cols-4 gap-5">
                 <div class="hover:shadow-lg transition-shadow duration-800" v-for="item in datas">                    

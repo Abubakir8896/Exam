@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="container">
-            <div class="flex justify-between items-center">
+            <div class="md:flex hidden justify-between items-center">
                 <h1 class="text-[#454545] text-[40px] mb-[20px]">Каталог</h1>
                 <button class="flex items-center pt-[10px] pb-[10px] pl-[35px] pr-[35px] border rounded-[100px]">Весь
                     каталог <img class="w-[14px] h-[10px] ml-[6px]" src="../public/next.webp" alt=""></button>
@@ -23,6 +23,13 @@
     </div>
 </template>
 <script setup>
+useHead({
+	title: 'Main page',
+	link: {
+		href: 'https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css',
+		rel: 'stylesheet',
+	},
+})
 const catalogs = ref([
     {
 

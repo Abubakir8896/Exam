@@ -18,7 +18,7 @@ const store = usePiniaStore()
 </script>
 
 <template>
-  <div class="container mb-16">
+  <div class="container mb-[25px]">
     <div class="md:flex hidden items-center justify-between py-3 text-sm">
       <nav>
         <ul class="flex gap-7 text-primary/50 font-semibold">
@@ -27,7 +27,7 @@ const store = usePiniaStore()
           <li><nuxt-link class="hover:text-[#000]" to="/return">Возврат</nuxt-link></li>
           <li><nuxt-link class="hover:text-[#000]" to="/garant">Гарантии</nuxt-link></li>
           <li><nuxt-link class="hover:text-[#000]" to="/contact">Контакты</nuxt-link></li>
-          <li><nuxt-link class="hover:text-[#000]" to="">Блог</nuxt-link></li>
+          <li><nuxt-link class="hover:text-[#000]" to="/blog">Блог</nuxt-link></li>
         </ul>
       </nav>
       <div class="flex gap-6">
@@ -50,7 +50,7 @@ const store = usePiniaStore()
         <nuxt-link to="/"><img v-if="showInput" class="max-md:w-40" src="/logo.svg" alt="" /></nuxt-link>
       </div>
       <nuxt-link
-        to="/"
+        to="/catalog"
         class="bg-primary py-3 md:flex hidden px-7 rounded-full text-white gap-2"
         ><img src="/catalog.svg" alt="icon" />Каталог</nuxt-link
       >
@@ -68,7 +68,7 @@ const store = usePiniaStore()
         <nuxt-link to="/favorites" class="relative flex flex-col items-center">
           <img src="/like.svg" alt="" />
           <p class="md:block hidden">Избранное</p>
-          <div class="absolute top-[-15px] right-4 text-[#fff] w-[22px] h-[18px] ">
+          <div v-if="store.likedProducts.length>0" class="absolute top-[-15px] right-[-15px] md:right-4 text-[#fff] w-[22px] h-[18px] ">
             <h1 class="bg-[#C63C3C] text-center border rounded-full text-[14px]">{{ store.likedProducts.length }}</h1>
           </div>
         </nuxt-link>
@@ -77,10 +77,13 @@ const store = usePiniaStore()
           <img v-if="showInput" src="/reyting.svg" alt="" />
           <p>Сравнение</p>
         </div>
-        <div class="flex flex-col items-center">
+        <nuxt-link to="/basket" class="relative flex flex-col items-center">
           <img src="/cart.svg" alt="" />
           <p class="md:block hidden">Корзина</p>
-        </div>
+          <div v-if="store.basket.length>0" class="absolute top-[-12px] right-[-15px] md:right-[2px] text-[#fff] w-[22px] h-[18px] ">
+            <h1 class="bg-[#C63C3C] text-center border rounded-full text-[14px]">{{ store.basket.length }}</h1>
+          </div>
+        </nuxt-link>
       </div>
     </div>
 
@@ -104,22 +107,22 @@ const store = usePiniaStore()
             class="flex flex-col items-center gap-7 text-primary/50 font-semibold border-t"
           >
             <li class="border-b py-4 w-full text-center">
-              <nuxt-link to="/">О компании</nuxt-link>
+              <nuxt-link to="/about">О компании</nuxt-link>
             </li>
             <li class="border-b py-4 w-full text-center">
-              <nuxt-link to="/">Доставка и оплата</nuxt-link>
+              <nuxt-link to="/shipping">Доставка и оплата</nuxt-link>
             </li>
             <li class="border-b py-4 w-full text-center">
-              <nuxt-link to="/">Возврат</nuxt-link>
+              <nuxt-link to="/return">Возврат</nuxt-link>
             </li>
             <li class="border-b py-4 w-full text-center">
-              <nuxt-link to="/">Гарантии</nuxt-link>
+              <nuxt-link to="/garant">Гарантии</nuxt-link>
             </li>
             <li class="border-b py-4 w-full text-center">
-              <nuxt-link to="/">Контакты</nuxt-link>
+              <nuxt-link to="/contact">Контакты</nuxt-link>
             </li>
             <li class="border-b py-4 w-full text-center">
-              <nuxt-link to="/">Блог</nuxt-link>
+              <nuxt-link to="/blog">Блог</nuxt-link>
             </li>
           </ul>
         </nav>

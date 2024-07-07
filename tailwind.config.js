@@ -7,25 +7,16 @@ export default {
 				primary: '#454545',
 			},
 			fontFamily: {
-				roboto: 'Roboto',
+				roboto: 'Manrope',
 			},
 		},
 		container: {
 			center: true,
-			padding: {
-				DEFAULT: '4rem',
-				sm: '3rem',
-				lg: '5rem',
-				xl: '6rem',
-				'2xl': '7rem',
+			padding: '16px',
+			screens: {
+			  xl: '1332px',
+			  '2xl': '1332px',
 			},
-		},
+		  },
 	},
-	content: [
-		'node_modules/flowbite-vue/**/*.{js,jsx,ts,tsx,vue}',
-		'node_modules/flowbite/**/*.{js,jsx,ts,tsx}'
-	  ],
-	  plugins: [
-		  require('flowbite/plugin')
-	  ],
 }
