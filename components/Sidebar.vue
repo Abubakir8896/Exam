@@ -1,4 +1,5 @@
 <script setup>
+const router = useRouter()
 onMounted(() => {
     const button1 = document.querySelector(".button1");
     const button2 = document.querySelector(".button2");
@@ -34,7 +35,10 @@ onMounted(() => {
 <template>
     <aside class="h-screen bg-[#454545] px-4 py-6 flex flex-col">
         <h2 class="text-[25px] mb-4 text-white flex items-center w-[350px]">
-            <img class="w-[28px] h-[15px]" src="../public/backicon.png" alt=""> Admin Panel
+            <button @click="router.go(-1)">
+                <img class="w-[28px] h-[15px]" src="../public/backicon.png" alt="">
+            </button>
+            Admin Panel
         </h2>
         <div class="mt-[12px]">
             <nuxt-link to="/admin/dashboard">
