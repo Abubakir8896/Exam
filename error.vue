@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-        <NavbarHeader />
+        <Navbar />
         <div class="flex justify-center box mt-[126px]">
             <img class="max-md:w-[319px] max-md:h-[187px]" src="/404.png" />
         </div>

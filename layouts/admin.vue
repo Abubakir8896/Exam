@@ -7,7 +7,7 @@
       <Sidebar />
     </div>
     <div class="w-4/5">
-      <RouterView />
+      <slot/>
     </div>
   </main>
 </template>
